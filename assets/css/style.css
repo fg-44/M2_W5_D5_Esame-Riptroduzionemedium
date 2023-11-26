@@ -7,71 +7,87 @@
   
   body { width: 100%;}
 
-       .header {
-
-             background-color: #ffc017;
-             border-bottom: 1px solid #191919; 
-             width: 100%; position: fixed;
-             top: 0%; left: 0%; 
-             
-             padding: 30px;
-             display: flex;
-             align-content: center;
-             align-items: center;
-
-        } 
 
         a { text-decoration: none;}
+
+        button {
+
+            display: inline-block;
+            font-family: 'Roboto', sans-serif;
+
+            border-radius: 99em;
+   
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+       }
 
 
 /*------------------ MENU NAVIGATORE ------------------*/
 
-        .logo_nav{display: inline-block; margin-left: 127px;}
+header {  
 
-        .menu {
+    background-color: #ffc017;
+    border-bottom: 1px solid #191919;
+    width: 100%;
+    height: 4em;
+    padding: 1% 10% 1% 10% ;
 
-            width: 100%;
+    display: flex;
+    position: sticky;
+    align-items: center;
+    top: 0; left: 0;
 
-        }
+    transition: background-color 02s ease-in-out;
+    
+}
+   
+header.scrolled { 
+   
+    background-color: white;
+      
+}
 
-            .menu li { 
+   header nav {  
 
-                 display: inline-block;
-                 justify-content: end ;
-                 padding-left: 10px;
-                 
-            }
 
-            .menu li a { color: black; }
+        flex-direction: row;
+        flex-wrap: nowrap;
+        text-align: right;
+        width: 100%;
+     
+   }
 
-            button {
+   header nav a {  
 
-                 display: inline-block;
-                 font-family: 'Roboto', sans-serif;
+        text-decoration: none;
+        color: #191919;
 
-                 border-radius: 99em;
-        
-                 text-decoration: none;
-                 border: none;
-                 cursor: pointer;
-            }
+        font-size: 0.9em;
+        margin: 1em;
+        cursor: pointer;       
+      
+  }
 
-        #started{   
-                      font-size: 14px; 
-                      padding: 8px 16px;
-                      background-color: #191919;
-                      color: #fff;
-                    
-                    }
+    header nav button {
 
-        #Reading{
-                      font-size: 20px ;
-                      font-weight: 400;
-                      padding: 8px 45px;
-                      background-color: #191919;
-                      color: #fff;
+        background-color: #191919;
+        color: white;
 
-         }
+        border: none;
+        border-radius: 10em;
+        padding: 0.5em 1em 0.5em 1em;
+        cursor: pointer;
+
+        transition: background-color 2s ease-in-out;
+  }
+
+    header.scrolled nav button { 
+   
+         background-color: #1a8917;
+   
+  
+}
             
 /*------------------ I NEED A HEROOOH ------------------*/
 
@@ -98,7 +114,7 @@
              flex-direction: column;}
 
              
-             .hero .hero__contenuto h1 { 
+            .hero .hero__contenuto h1 { 
 
                 font-size: 100px;
                 font-family:'Spectral', serif;
@@ -109,7 +125,7 @@
                 box-sizing: inherit;
 
                 
-             }
+            }
 
             .hero .hero__contenuto p { 
 
@@ -119,8 +135,14 @@
                 font-weight: 400px;
 
                 padding-bottom: 20px;
+                margin-left: 10px;
                 box-sizing: inherit;
-             }
+            }
+
+            .hero .hero__contenuto #reading  {       
+                  background-color: #191919;
+                  color: aliceblue;   
+            }
 
 
              /* .hero .hero__contenuto .artwork { display:flex; flex-direction: column;} */
@@ -130,7 +152,10 @@
 
          #trending {  
                          padding: 5px;
-                          margin-top: 33px;
+                         margin-top: 33px;
+
+                         display: flex;
+                         align-items: center;
         }
 
         /*-------------- articoli  --------------*/
@@ -167,31 +192,32 @@
                  max-width: 33.33%;
                  margin: 10px;
 
-                 display: flex; 
-                 border: 1px solid #191919; 
-                
+                 display: flex;               
                 
             }
                             
-            .fp {
+                 .fp {
 
-                font-size: 30px;
-                border: 1px solid black;
-                margin-right: 2px;
-                color: rgb(193, 193, 193);
+                     font-size: 30px;
+                     margin-right: 2px;
+                     color: rgb(193, 193, 193);
 
-                height: 100%;
-                width: 30%;
-                display: flex;
-                justify-content: flex-start;
+                     height: 100%;
+                     width: 30%;
+                     display: flex;
+                     justify-content: flex-start;
 
 
-            }
+                 }
 
             .descrizione { 
 
-                display: inline;           
+                 display: flex;           
             }
+
+            .foto_autore {display: flex;}
+
+
 
 
 /*------------ ARTICLE -SECTION FLEX  ------------*/
@@ -213,7 +239,6 @@
 
          article { 
      
-         border: 1px solid #191919; 
          width: 50%;
 
          padding: 30px;
@@ -222,11 +247,12 @@
 
          }
 
+              .descrizione {display: flex;}
+
         /*------------ ANTEPRIMA ------------*/
 
          section { 
      
-         border: 1px solid #191919; 
          width: 30%;
          padding: 30px;
 
@@ -237,6 +263,8 @@
                 display: flex;
                 flex-wrap: wrap;
                 align-content: center;
+
+                display: fixed;
 
              }
              .reading {
@@ -249,7 +277,35 @@
                       background-color: #e3dede;
                       color: #000000;
 
+                      flex-direction: row;
+                      flex-wrap: nowrap;
+                      text-align: center;
+                      align-content: center;
+
              }
+
+             .see {
+
+                     background-color: transparent;
+                     color: rgb(80, 165, 91);
+                     font-size: 14px ;
+
+                     flex-direction: row;
+                     text-align: center;
+                     align-content: center;
+
+            
+            }
+
+
+            .autore { 
+
+                 display: flex;
+                 align-items: center;
+                 
+            }
+
+            .circle { border-radius: 50%;}
 
 
 
